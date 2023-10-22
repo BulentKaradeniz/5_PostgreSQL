@@ -23,4 +23,26 @@ SELECT * FROM family_member -- tablodaki tüm verileri çağırmak için
 SELECT * FROM members 
 
 SELECT  name_surname, age FROM Family_member
+--------------------------------
+
+create table ogretmenler
+(
+	kimlik_no char(11),
+	isim varchar(50),
+	brans varchar(20),
+	cinsiyet varchar(5),
+	yas real
+
+)
+
+select * from ogretmenler;
+
+insert  into ogretmenler values (55555555555, 'Hülya Karadeniz','Fizik', 'Bayan', 45);
+insert  into ogretmenler values (567597624, 'Bülent Karadeniz');
+insert  into ogretmenler( brans, cinsiyet, yas) values ('Biyoloji', 'Bay', 45);
+
+
+
+
+
 
