@@ -37,7 +37,7 @@ insert into personel_1 (id, isim, yas, maas, email) values (7, 'Can', 38, 19000,
 insert into personel_1 (id, isim, yas, maas, email) values (8, 'Elif', 27, 14000, 'elif@gmail.com');
 insert into personel_1 (id, isim, yas, maas, email) values (9, 'Ezgi', 38, 21000, 'ezgi@gmail.com');
 insert into personel_1 (id, isim, yas, maas, email) values (10, 'Sena', 25, 11000, NULL);
-
+insert into personel_1 (id, isim, yas, maas, email) values (11, 'Hulya', 39, 21000, 'hulya@gmail.com');
 
 
 -- 1) Tablo bilgilerini listeleyiniz.
