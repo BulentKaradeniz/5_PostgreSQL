@@ -39,10 +39,16 @@ insert into personel_1 (id, isim, yas, maas, email) values (9, 'Ezgi', 38, 21000
 insert into personel_1 (id, isim, yas, maas, email) values (10, 'Sena', 25, 11000, NULL);
 insert into personel_1 (id, isim, yas, maas, email) values (11, 'Hulya', 39, 21000, 'hulya@gmail.com');
 insert into personel_1 (id, isim, yas, maas, email) values (9, 'Bulent', 48, 21000, 'bulent@gmail.com');
+-- ekstra benim örnek
+CREATE TABLE Takım_1
+AS
+SELECT  isim, yas, maas
+FROM personel_1;
 
 
 -- 1) Tablo bilgilerini listeleyiniz.
 select * from personel_1;
+select  * from Takım_1;
 
 -- 2) isim, yaş ve maaş bilgilerini listeleyiniz
 select isim,yas,maas from personel_1;
@@ -55,6 +61,7 @@ select * from personel_1 where id=11;
 -- 4) id'si 5 olan personelin isim, yaş ve email bilgilerini listeleyiniz
 select isim,yas,email from personel_1 where id=5;
 select isim, yas, email from personel_1 where id=11;
+
 -- 5) 30 yaşından büyük personel bilgilerini listeleyiniz.
 select * from personel_1 where yas>30;
 select * from personel_1 where yas <30;
@@ -69,16 +76,21 @@ select * from personel_1 where isim  like 'H%';
 
 -- 8) ismi n harfi ile biten personel bilgilerini listeleyiniz.
 select * from personel_1 where isim like '%n';
+select * from personel_1 where isim like '%a';
 
 -- 9) email adresi gmail olan personel bilgilerini listeleyiniz.
 select * from personel_1 where email like '%gmail%';
+select * from personel_1 where email like '%hotmail%';
 
 -- 10) email adresi gmail olmayan personel bilgilerini listeleyiniz.
+select * from personel_1 where email not like '%gmail%';
 select * from personel_1 where email not like '%gmail%';
 
 -- 11) id'si 3,5,7 ve 9 olan personel bilgilerini listeleyiniz.
 select * from personel_1 where id in (3,5,7,9);
 select * from personel_1 where id=3 or id=5 or id=7 or id=9;
+select * from personel_1 where id in (11, 10);
+select * from personel_1 where id =10 or id=11;
 
 -- 12) yaşı 39,48 ve 54 olmayan personel bilgilerini listeleyiniz.
 select * from personel_1 where yas not in (39,48,54);
