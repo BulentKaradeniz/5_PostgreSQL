@@ -38,6 +38,7 @@ insert into personel_1 (id, isim, yas, maas, email) values (8, 'Elif', 27, 14000
 insert into personel_1 (id, isim, yas, maas, email) values (9, 'Ezgi', 38, 21000, 'ezgi@gmail.com');
 insert into personel_1 (id, isim, yas, maas, email) values (10, 'Sena', 25, 11000, NULL);
 insert into personel_1 (id, isim, yas, maas, email) values (11, 'Hulya', 39, 21000, 'hulya@gmail.com');
+insert into personel_1 (id, isim, yas, maas, email) values (9, 'Bulent', 48, 21000, 'bulent@gmail.com');
 
 
 -- 1) Tablo bilgilerini listeleyiniz.
@@ -48,18 +49,23 @@ select isim,yas,maas from personel_1;
 
 -- 3) id'si 8 olan personel bilgilerini listeleyiniz
 select * from personel_1 where id=8;
+select * from personel_1 where id=11;
+
 
 -- 4) id'si 5 olan personelin isim, yaş ve email bilgilerini listeleyiniz
 select isim,yas,email from personel_1 where id=5;
-
+select isim, yas, email from personel_1 where id=11;
 -- 5) 30 yaşından büyük personel bilgilerini listeleyiniz.
 select * from personel_1 where yas>30;
+select * from personel_1 where yas <30;
 
 -- 6) maası 21000 olmayan personel bilgilerini listeleyiniz.
 select * from personel_1 where  not maas=21000;
+select * from personel_1 where not maas = 30000;
 
 -- 7) ismi a harfi ile başlayan personel bilgilerini listeleyiniz.
 select * from personel_1 where isim like 'A%';
+select * from personel_1 where isim  like 'H%';
 
 -- 8) ismi n harfi ile biten personel bilgilerini listeleyiniz.
 select * from personel_1 where isim like '%n';
