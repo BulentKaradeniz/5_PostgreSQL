@@ -95,26 +95,33 @@ select * from personel_1 where id =10 or id=11;
 -- 12) yaşı 39,48 ve 54 olmayan personel bilgilerini listeleyiniz.
 select * from personel_1 where yas not in (39,48,54);
 select * from personel_1 where not (yas=39 or yas=48 or yas=54);
+select * from personel_1 where  isim not in ( 'Bulent',' Hulya');
 
 -- 13) yaşı 30 ve 40 arasında olan personel bilgilerini listeleyiniz.
 select * from personel_1 where yas between 30 and 40;
+select * from personel_1 where  maas between 20000 and 30000;
 
 -- 14) yaşı 30 ve 40 arasında olmyan personel bilgilerini listeleyiniz.
 select * from personel_1 where yas not between 30 and 40;
+select * from  personel_1 where yas  not between 20 and 30;
 
 -- 15) emaili olmayan personel bilgilerini listeleyiniz.
 select * from personel_1 where email is null;
+select * from personel_1 where yas is null;
 
 -- 16) emaili olan personel bilgilerini listeleyiniz.
 select * from personel_1 where email is  not null;
+select * from personel_1 where email is not null;
 
 -- 17) personel bilgilerini yaşa göre sıralayınız.
 select * from personel_1 order by yas;
+select * from personel_1 order by maas;
 
 -- 18) personel bilgilerini maaşa göre sıralayınız.
 select * from personel_1 order by maas;
 
 -- 19) personelin yaşlarını büyükten küçüğe doğru sıralayınız.
+select * from personel_1 order by yas desc;
 select * from personel_1 order by yas desc;
 
 -- 20) personelin maaşlarını büyükten küçüğe doğru sıralayınız.
