@@ -130,6 +130,8 @@ select * from personel_1 order by maas desc;
 -- 21) En yüksek maaş olan ilk 3 personel bilgilerini sıralayınız
 select * from personel_1 order by maas desc fetch next 3 row only;
 select * from personel_1 order by maas desc limit 3;
+select * from personel_1 order by yas desc limit 3;
+select * from personel_1 order by yas desc  fetch next 3 row only;
 
 -- 21) En yüksek maaş olan 4., 5. be 6. personelin bilgilerini sıralayınız
 select * from personel_1 order by maas desc offset 3 limit 3;
@@ -141,6 +143,7 @@ select * from personel_1 order by maas desc offset 1 limit 3;
 --22) Maaşı 20000 den büyük olup, yaşı 35'den küçük olanları sıralayınız
 select * from personel_1 where maas>20000 and yas<35;
 select * from personel_1 where maas>20000 or yas<35; --order by yas; --arasındaki farkı görmek için yazılmıştır.
+select * from personel_1 where maas>30000  and yas<25 ; 
 
 --23) Maaşı 20000 den büyük olanlar ile yaşı 35'den küçük olanları sıralayınız
 select * from personel_1 where yas<35 or maas>20000;
@@ -149,23 +152,45 @@ select * from personel_1 where yas<35 or maas>20000;
 select * from personel_1 where maas>20000
 union
 select * from personel_1 where yas<35 order by yas;
+ select  * from personel_1 where maas>25000
+ union
+ select * from personel_1  where yas<25  order by maas;
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 --25) Personel_1 tablosuna sehir ve meslek sütunlarını ekleyiniz.
 alter table  personel_1 
 add sehir varchar(25), add meslek varchar(25);
 
+alter table personel_1
+add sehir varchar(25), add meslek varchar(25);
+select * from personel_1;
+
 --26) Personel_1 tablosuna sehir sütununu "sehir_adi" şeklinde değiştiriniz.
 alter table  personel_1 
 rename column sehir to sehir_adi;
 
+ alter table personel_1
+ rename column sehir to sehir_adi;
+ 
+ alter table personel_1
+ rename column isim to isim_soyisim;
+ select * from personel_1
+
 --27) Personel_1 tablosunu calisan seklinde değiştiriniz.
 alter table  personel_1 rename to calisan;
 
+alter table personel_1 rename to calisanlar;
+select * from calisanlar;
+
 --28) Calisan tablosunda sehir_adi sütununu siliniz.
 alter table  calisan drop column sehir_adi;
+alter table calisanlar  drop column  sehir_adi;
+alter table  calisanlar drop column meslek;
 
-select * from calisan;
+select * from calisanlar;
 -- 29) Calisan tablosunda email ve meslek sütunlarını siliniz.
 alter table  calisan 
 drop column email, drop column meslek;
+
+alter table  calisanlar
+drop column email,  drop column maas, drop column yas; 
