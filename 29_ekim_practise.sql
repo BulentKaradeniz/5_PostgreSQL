@@ -152,17 +152,59 @@ select * from isciler
 order by maas desc
 fetch next  3 row only;
 -------------
-9)Isciler tablosunda ikinci en dusuk maasi alan iscinin tum bilgilerini gosteren queryyazin
+9)personel tablosunda ikinci en dusuk maasi alan iscinin tum bilgilerini gosteren queryyazin
 select * from personel
-order by maas desc
+order by maas  desc
 
 select * from isciler
 order by maas desc
 
 
+select * from  personel
+order by maas 
+offset 1 row 
+fetch next 1 row only;
+ /*
+Bu SQL sorgusu, "PERSONEL" tablosundan maaşa göre sıralanmış olan verilerden ikinci en düşük maaşı alan personelin tüm bilgilerini getirmek için kullanılır. Sorgu iki önemli SQL ifadesini içerir: "OFFSET" ve "FETCH NEXT."
 
+İşte sorgunun adım adım açıklaması:
 
+"SELECT * FROM PERSONEL": Bu kısmı, "PERSONEL" tablosundan tüm sütunları ve tüm satırları seçmek için kullanır.
 
+"ORDER BY Maas": Bu bölüm, sonuçların "Maas" sütununa göre sıralandığını belirtir. Bu sayede personelin maaşları küçükten büyüğe sıralanmış olur.
 
+"OFFSET 1 ROW": "OFFSET" ifadesi, sorgu sonucu setinin başlangıç noktasını belirler. Bu durumda, sorgu sonucu setinin ilk satırını atlamadan önce "1 ROW" yani 1 satır atlanır. Yani, en düşük maaşı alan kişiyi atlar ve ikinci en düşük maaşı alan kişiden başlar.
+
+"FETCH NEXT 1 ROW ONLY": "FETCH NEXT" ifadesi, sonuç kümesinden belirtilen sayıda satırın getirilmesini sağlar. Bu durumda, yalnızca bir sonraki satırı (yani ikinci en düşük maaşı alan kişiyi) getirmek için kullanılır.
+*/
+-------
+--10)Isciler tablosunda en yuksek maasi alan iscinin disindaki tum iscilerin, tumbilgilerini gosteren query yazin
+select * from isciler;
+
+/* hatalı  sogu  chat gpt den 
+DELETE FROM isciler
+WHERE (id, isim, sehir , maas,  sirket) IN (
+    SELECT id, isim, sehir , maas,  sirket
+    FROM isciler
+    GROUP BY id, isim, sehir , maas,  sirket
+    HAVING COUNT(*) > 1
+);
+
+/*"HAVING COUNT(*) > 1" ifadesi, SQL'de "GROUP BY" ifadesiyle birlikte kullanılarak yinelenen (duplicate) satırları bulmak ve yinelenenlerin sayısını belirlemek için kullanılır.
+
+İşte bu ifadeyi daha detaylı açıklamak için bir örnek:
+
+Diyelim ki bir tabloda bir sütun adı "product_name" olsun ve bu sütunda aynı ürün adına sahip birden fazla satır bulunsun. "HAVING COUNT() > 1" ifadesi, bu durumu belirlemek için kullanılır. Burada "COUNT()" ile gruplandırılan her ürün adının toplam sayısı hesaplanır.
+
+"COUNT(*)" ifadesi, her ürün adının gruplandırıldığı tüm satırların sayısını temsil eder.
+"HAVING COUNT(*) > 1" ifadesi, yalnızca birden fazla satırı olan (yinelenen) ürün adlarını seçer. Yani, "product_name" sütununda birden fazla kez tekrarlanan ürün adlarını seçmek için kullanılır.
+Ayrıca, "HAVING" ifadesi "GROUP BY" ifadesi ile birlikte kullanılır ve gruplandırılmış veriler üzerinde filtreleme yapmak için kullanılır. Yani, yinelenen satırları gruplandırmak ve ardından yinelenenlerin sayısına göre filtrelemek için "HAVING" ifadesi kullanılır.
+*/
+*/
+select *
+from isciler
+where maas<>(select max(maas)
+			from isciler)
+order by  maas desc;
 
 
