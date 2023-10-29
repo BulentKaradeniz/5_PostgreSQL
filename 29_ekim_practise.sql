@@ -52,3 +52,57 @@ from personel
 where  id in(select id
 			 from isciler
 			 where isciler.id = personel.id); 
+--------------------------
+2)Her iki tablodaki ortak id ve isme sahip kayitlari listeleyen queryyaziniz
+
+Örnek 1: İki tablo arasında kesişen (ortak) değerleri bulmak
+SELECT column_name FROM table1
+INTERSECT
+SELECT column_name FROM table2;
+-----------------------------
+SELECT column_name FROM table
+WHERE column_name IN
+(
+    SELECT column_name FROM other_table
+    INTERSECT
+    SELECT column_name FROM another_table
+);
+-----------------------------------
+select  isim, id
+from personel
+intersect
+select isim,id
+from isciler;
+------------------------------------------------
+select * from personel
+3)Personel tablosunda kac farkli sehirden personelvar?
+
+select count (distinct sehir) as sehir_sayisi 
+from personel;
+
+select count (distinct sehir) as sehir_sayisi
+from isciler;
+-------------------------------------------------------
+4)Personel tablosunda id’si cift sayi olan personel’in tum bilgilerini listeleyen Queryyaziniz
+select * from personel
+
+select * from  personel
+where  mod (id,2)=0;
+
+---------------
+5)Personel tablosunda kac tane kayit oldugunu gosteren queryyazin
+
+select count(*)
+from personel;
+
+select count(id) as kayıt_sayisi
+from personel;
+
+select count(*)
+from isciler;
+------------------------------
+
+
+
+
+
