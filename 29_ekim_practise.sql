@@ -101,6 +101,66 @@ from personel;
 select count(*)
 from isciler;
 ------------------------------
+--6)Isciler tablosunda en yuksek maasi alan kisinin tum bilgilerini gosteren query yazin
+
+select * from isciler
+
+select max(maas) as max_maas
+from isciler;
+
+---tüm bilgileri için
+ select * from isciler
+ where maas in (select max(maas)
+			   from isciler);
+			   
+---7)Personel tablosunda en dusuk maasi alan kisinin tum bilgilerini gosteren queryyazin
+
+select * from  personel;
+
+select min(maas)
+from personel;
+
+select * from personel
+where maas in (select min(maas)
+			  from personel);
+			  
+-----başka bir yol			  
+select * from  personel
+order by maas
+fetch next 1 row only;
+
+-----------------------
+SELECT *
+FROM Personel
+WHERE Maas = (SELECT MIN(Maas) FROM Personel);
+
+select avg(maas) from personel;
+
+-------------------
+--8)Isciler tablosunda ikinci en yuksek maasi maasi gosteren queryyazin.
+/*Bu SQL sorgusu, "ISCILER" tablosundaki "maas" sütununda en yüksek maaşı bulurken "PERSONEL" tablosundaki en yüksek maaşı hariç tutmak için "<>" (eşit değil) operatörünü kullanıyor.
+"<>" operatörü, SQL'de "eşit değil" anlamına gelir. Yani, bu sorgu "ISCILER" tablosundan en yüksek maaşa sahip olan personeli hariç tutar ve geriye kalan personellerin maaşlarının en yükseğini bulur.
+*/
+select  * from isciler
+
+select max(maas)
+from isciler
+where maas<>(select max (maas)
+			from personel);
+-------------			
+select * from isciler
+order by maas desc
+fetch next  3 row only;
+-------------
+9)Isciler tablosunda ikinci en dusuk maasi alan iscinin tum bilgilerini gosteren queryyazin
+select * from personel
+order by maas desc
+
+select * from isciler
+order by maas desc
+
+
+
 
 
 
