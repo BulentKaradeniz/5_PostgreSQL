@@ -39,5 +39,16 @@ INSERT INTO isciler VALUES(456789012,'Brad Pitt', 'Texas', 1500,'GOOGLE');
 INSERT INTO isciler VALUES(123456710,'Mark Stone', 'Pennsylvania', 2500,'IBM');
 
 select * from isciler;
+-------------------
+/*Her iki tablodaki ortak id’leri ve personel tablosunda bu id’ye sahip isimleri listeleyen queryyaziniz */
+select  isim,id
+from personel
+where id in(select id 
+		   from isciler
+		   where isciler.id=personel.id);
 
-
+select  id
+from personel
+where  id in(select id
+			 from isciler
+			 where isciler.id = personel.id); 
