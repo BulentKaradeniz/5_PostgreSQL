@@ -88,11 +88,12 @@ Practice 4:
 
 create table  tedarikciler3
 (
-tedarikci_id char(5),
+	tedarikci_id char(5),
 	tedarikci_ismi varchar(20),
 	iletisim_ismi varchar(20),
 	CONSTRAINT tdrk PRIMARY KEY (tedarikci_id)
 );
+
 
 create table urunler1
 (
@@ -101,6 +102,25 @@ urun_id char(10),
 CONSTRAINT tdrk FOREIGN KEY (tedarikci_id) references tedarikciler3(tedarikci_id)
 	
 );
+---------------------------------------------
+ 
+create table sirketler
+(
+	sirket_id char(5) not null,
+	sirket_ismi varchar(20),
+	iletisim_isim varchar(50),
+	constraint sirketler_pk primary key (sirket_id)
+);
+ 
+create table  urunler
+(
+	sirket_id char(5),
+	product_id char(10),
+	constraint urunler_fk foreign key (sirket_id) references sirketler( sirket_id)
+	
+);
+select * from  sirketler;
+select * from urunler;
  
 /*
 Practice 5:
