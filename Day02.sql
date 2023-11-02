@@ -44,14 +44,14 @@ email varchar(50),
 ise_baslama_tar date,
 maas int
 ) ;
-inser into personel ( id,soyisim) values(123456789, 'isci','Erol');
+insert into personel ( id,soyisim) values(123456789, 'isci','Erol');
 select * from personel
 
 --- 
 -- primary key 2 yol
 CREATE TABLE ogrenciler5
 (
-idchar(4),
+id char(4),
 isim varchar(50) NOT NULL, 
 not_ortalamasi real,
 adres varchar(100), kayit_tarihidate,
