@@ -130,39 +130,46 @@ Practice 5:
 “adres_id” field‘i ile Foreign Key oluşturun.
 */
 
-create table calisanlar 
+create table calisanlar3 
+
 (
-id char(9) primary key,
+	id char(9) primary key,
 	isim varchar(10) unique,
 	maas int not null,
 	ise_baslama date
-)
+);
 
-create table adresler
+create table adresler3
 (
 adres_id char(10),
 sokak varchar(10),
 cadde varchar(10),
 sehir varchar(10),
 	
-CONSTRAINT adrsfk FOREIGN KEY (adres_id) references calisanlar(id)
+CONSTRAINT adrsfk FOREIGN KEY (adres_id) references calisanlar3(id)
 
-)
+);
+
+alter table calisanlar3
+alter column isim type varchar(30);
+alter table calisanlar3
+alter column isim type varchar(30) unique;
+
 --------
-INSERT INTO calisanlar VALUES('10002', 'Mehmet Yılmaz' ,12000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10008', null, 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10010', Mehmet Yılmaz, 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10004', 'Veli Han', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10005', 'Mustafa Ali', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10006', 'Canan Yaş', NULL, '2019-04-12');
-INSERT INTO calisanlar VALUES('10003', 'CAN', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10007', 'CAN', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10009', 'cem', '', '2018-04-14');
-INSERT INTO calisanlar VALUES('', 'osman', 2000, '2018-04-14');
-INSERT INTO calisanlar VALUES('', 'osman can', 2000, '2018-04-14');
-INSERT INTO calisanlar VALUES( '10002', 'ayse Yılmaz' ,12000, '2018-04-14');
-INSERT INTO calisanlar VALUES( null, 'filiz ' ,12000, '2018-04-14');
-6:46
+INSERT INTO calisanlar3 VALUES('10002', 'Mehmet Yılmaz' ,12000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10008', null, 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10010', 'Mehmet Yılmaz', 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10004', 'Veli Han', 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10005', 'Mustafa Ali', 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10006', 'Canan Yaş', NULL, '2019-04-12');
+INSERT INTO calisanlar3 VALUES('10003', 'CAN', 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10007', 'CAN', 5000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('10009', 'cem', '', '2018-04-14');
+INSERT INTO calisanlar3 VALUES('', 'osman', 2000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES('', 'osman can', 2000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES( '10002', 'ayse Yılmaz' ,12000, '2018-04-14');
+INSERT INTO calisanlar3 VALUES( null, 'filiz ' ,12000, '2018-04-14');
+
 INSERT INTO adresler VALUES('10003','Mutlu Sok', '40.Cad.','IST');
 INSERT INTO adresler VALUES('10003','Can Sok', '50.Cad.','Ankara');
 INSERT INTO adresler VALUES('10002','Ağa Sok', '30.Cad.','Antep');

@@ -24,20 +24,23 @@ create table calisanlar2
 	maas real not null,
 	 ise_baslama date
 );
+--------
+alter table calisanlar2
+alter column isim type varchar(30);
 
-INSERT INTO calisanlar VALUES('10002', 'Mehmet Yılmaz' ,12000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10008', null, 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10010', Mehmet Yılmaz, 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10004', 'Veli Han', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10005', 'Mustafa Ali', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10006', 'Canan Yaş', NULL, '2019-04-12');
-INSERT INTO calisanlar VALUES('10003', 'CAN', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10007', 'CAN', 5000, '2018-04-14');
-INSERT INTO calisanlar VALUES('10009', 'cem', '', '2018-04-14');
-INSERT INTO calisanlar VALUES('', 'osman', 2000, '2018-04-14');
-INSERT INTO calisanlar VALUES('', 'osman can', 2000, '2018-04-14');
-INSERT INTO calisanlar VALUES( '10002', 'ayse Yılmaz' ,12000, '2018-04-14');
-INSERT INTO calisanlar VALUES( null, 'filiz ' ,12000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10002', 'Mehmet Yılmaz' ,12000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10008', null, 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10010', 'Mehmet Yılmaz', 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10004', 'Veli Han', 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10005', 'Mustafa Ali', 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10006', 'Canan Yaş', NULL, '2019-04-12');
+INSERT INTO calisanlar2 VALUES('10003', 'CAN', 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10007', 'CAN', 5000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('10009', 'cem', '', '2018-04-14');
+INSERT INTO calisanlar2 VALUES('', 'osman', 2000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES('', 'osman can', 2000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES( '10002', 'ayse Yılmaz' ,12000, '2018-04-14');
+INSERT INTO calisanlar2 VALUES( null, 'filiz ' ,12000, '2018-04-14');
 
 select * from calisanlar2;
 
