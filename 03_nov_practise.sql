@@ -104,3 +104,31 @@ INSERT INTO notlar VALUES ('126', 'Matematik',90);
 delete from  notlar   where talebe_id = '125';
 
 delete from ogrenciler where id = '123';
+
+---------------------
+create  table musteriler
+(
+	urun_id int,
+	musteri_isim varchar(50),
+	urun_isim varchar(50)
+);
+INSERT INTO musteriler VALUES (10, 'Mark', 'Orange');
+INSERT INTO musteriler VALUES (10,'Mark','Orange'); 
+INSERT INTO musteriler VALUES (20, 'John', 'Apple'); 
+INSERT INTO musteriler VALUES (30, 'Amy', 'Palm'); 
+INSERT INTO musteriler VALUES (20, 'Mark', 'Apple');
+INSERT INTO musteriler VALUES (10, 'Adem', 'Orange'); 
+
+select * from musteriler;
+
+select * 
+from musteriler
+where urun_isim ='Orange' or urun_isim ='Apple' or urun_isim ='Apricot';
+INSERT INTO musteriler VALUES (40, 'John', 'Apricot'); INSERT INTO musteriler VALUES (20, 'Eddie',‘Apple');
+
+
+
+
+
+
+
