@@ -56,4 +56,28 @@ create table  adresler
 
 select * from  adresler;
 
+-- 13/11/2023  çalışma
 
+create table  ogrenciler 
+(
+	id int,
+	isim varchar(50),
+	veli_isim varchar(50),
+	yazili_notu int
+);
+
+select * from ogrenciler;
+
+
+insert into ogrenciler values(123,'Ali Can', 'Hasan', 75);
+INSERT INTO ogrenciler VALUES(123, 'Veli Can', 'Hasan',75);
+INSERT INTO ogrenciler VALUES(124, 'Merve Gul', 'Ayse',85);
+INSERT INTO ogrenciler VALUES(125, 'Kemal Yasa', 'Hasan',85);
+INSERT INTO ogrenciler VALUES(126, 'Nesibe Yilmaz', 'Ayse',95);
+INSERT INTO ogrenciler VALUES(127, 'Mustafa Bak', 'Can',99);
+INSERT INTO ogrenciler VALUES(127, 'Mustafa Bak', 'Ali', 99);
+
+delete from ogrenciler where  id=124;
+delete from ogrenciler where id > 126 ;
+
+truncate table  ogrenciler;
