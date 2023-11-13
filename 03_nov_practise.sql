@@ -60,7 +60,7 @@ select * from  adresler;
 
 create table  ogrenciler 
 (
-	id int,
+	id char(3) primary key,
 	isim varchar(50),
 	veli_isim varchar(50),
 	yazili_notu int
@@ -70,14 +70,25 @@ select * from ogrenciler;
 
 
 insert into ogrenciler values(123,'Ali Can', 'Hasan', 75);
-INSERT INTO ogrenciler VALUES(123, 'Veli Can', 'Hasan',75);
+INSERT INTO ogrenciler VALUES(128, 'Veli Can', 'Hasan',75);
 INSERT INTO ogrenciler VALUES(124, 'Merve Gul', 'Ayse',85);
 INSERT INTO ogrenciler VALUES(125, 'Kemal Yasa', 'Hasan',85);
 INSERT INTO ogrenciler VALUES(126, 'Nesibe Yilmaz', 'Ayse',95);
-INSERT INTO ogrenciler VALUES(127, 'Mustafa Bak', 'Can',99);
+INSERT INTO ogrenciler VALUES(129, 'Mustafa Bak', 'Can',99);
 INSERT INTO ogrenciler VALUES(127, 'Mustafa Bak', 'Ali', 99);
 
 delete from ogrenciler where  id=124;
 delete from ogrenciler where id > 126 ;
 
 truncate table  ogrenciler;
+
+create table  notlar
+(
+	talebe_id char(3),
+	ders_adi varchar(30),
+	yazili_notu int,
+	constraint notlar_fk foreign key (talebe_id)
+	references  ogrenciler(id)	
+);
+--drop table ogrenciler;
+select * from notlar;
