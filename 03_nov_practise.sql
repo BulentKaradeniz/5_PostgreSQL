@@ -89,6 +89,18 @@ create table  notlar
 	yazili_notu int,
 	constraint notlar_fk foreign key (talebe_id)
 	references  ogrenciler(id)	
+	on delete cascade
 );
 --drop table ogrenciler;
+drop table notlar;
+
 select * from notlar;
+select * from ogrenciler;
+INSERT INTO notlar VALUES ('123','kimya',75);
+INSERT INTO notlar VALUES ('124', 'fizik',65);
+INSERT INTO notlar VALUES ('125', 'tarih',90);
+INSERT INTO notlar VALUES ('126', 'Matematik',90);
+
+delete from  notlar   where talebe_id = '125';
+
+delete from ogrenciler where id = '123';
