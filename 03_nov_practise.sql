@@ -124,6 +124,19 @@ select * from musteriler;
 select * 
 from musteriler
 where urun_isim ='Orange' or urun_isim ='Apple' or urun_isim ='Apricot';
+
+select *
+from musteriler 
+where urun_isim in ('Orange');
+
+
+select * from musteriler
+where urun_id>=20 and urun_id<=40;
+
+select* from musteriler
+where urun_id between 20 and 30;
+
+
 INSERT INTO musteriler VALUES (40, 'John', 'Apricot'); INSERT INTO musteriler VALUES (20, 'Eddie',‘Apple');
 
 
